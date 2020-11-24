@@ -43,13 +43,14 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
+    background(img)
 
 }
 
 
 function draw() {
   // put drawing code here
-    background(img)
+
     fill(myColor)
     text(nameP, mouseX,mouseY)
 }
@@ -68,7 +69,7 @@ function mouseMoved(){
     x: mouseX,
     y: mouseY,
     color: myColor,
-    text: nameP,
+
   };
 
 //send the message to the server
