@@ -61,19 +61,18 @@ function mouseMoved(){
   noStroke()
   if (keyIsDown(65)){
   ellipse(mouseX,mouseY,10);}
-
   pop()
   //create the message
   let message = {
     x: mouseX,
     y: mouseY,
     color: myColor,
-    text: nameP,
   };
 
 //send the message to the server
-if(keyIsDown(65))
+if(keyIsDown(65)){
 socket.emit("mouse", message)
+}
 }
 
 
