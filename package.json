@@ -1,24 +1,25 @@
 {
-  "name": "my-first-nodejs-donatorenzulli",
+  "name": "2020-05-donatorenzulli",
   "version": "1.0.0",
-  "description": "a simple node project by marina",
+  "description": "A simple node project",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/donatorenzulli/My-first-nodejs-DonatoRenzulli.git"
+    "url": "git+https://github.com/drawwithcode/2020-05-donatorenzulli.git"
   },
-  "author": "donato e marina",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/donatorenzulli/My-first-nodejs-DonatoRenzulli/issues"
+    "url": "https://github.com/drawwithcode/2020-05-donatorenzulli/issues"
   },
-  "homepage": "https://github.com/donatorenzulli/My-first-nodejs-DonatoRenzulli#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^3.0.1"
-  }
+  "homepage": "https://github.com/drawwithcode/2020-05-donatorenzulli#readme"
 }

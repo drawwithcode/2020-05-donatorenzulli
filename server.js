@@ -13,7 +13,7 @@ let  server = app.listen(port);
 
 app.use(express.static("public"))
 
-let io = socket(server);
+var io = socket(server);
 
 //AD OGNI CONNESSIONE DI UN CLIENT IL SERVER RICONOSCE
 //IL MESSAGGIO CONNECTION E NOI FACCIAMO PARTIRE LA FUNZIONE

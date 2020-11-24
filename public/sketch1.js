@@ -77,17 +77,17 @@ socket.emit("mouse", message)
 }
 }
 
-function newPlayer(newPlayerColor){
-  console.log(newPlayerColor)
-  y = height/2
-  fill('120')
-  rectMode(CENTER,CENTER);
-  noStroke()
-  rect(width/2,height/2,400,50)
-  fill(newPlayerColor)
-  textSize(30);
-  textAlign(CENTER,CENTER)
-  text('New player joined: '+ newPlayerColor, width/2,height/2)
-  pop()
-
-}
+// function newPlayer(newPlayerColor){
+//   console.log(newPlayerColor)
+//   y = height/2
+//   fill('120')
+//   rectMode(CENTER,CENTER);
+//   noStroke()
+//   rect(width/2,height/2,400,50)
+//   fill(newPlayerColor)
+//   textSize(30);
+//   textAlign(CENTER,CENTER)
+//   text('New player joined: '+ newPlayerColor, width/2,height/2)
+//   pop()
+//
+// }
