@@ -37,10 +37,10 @@ start.mousePressed(aprigioco)
     textSize(300)
     textFont('Impact')
     textAlign(LEFT)
-    text("TRISSS", 20,300)
+    text("TRIS", 20,300)
 }
 
 function aprigioco(){
    nome = input.value();
-  window.open('index1.html?nome='+nome, '_self')
+  window.open('tris.html?nome='+nome, '_self')
 }

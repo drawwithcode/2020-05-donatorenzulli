@@ -15,14 +15,6 @@ socket.on("color", setColor);
 socket.on("newPlayer", newPlayer)
 
 
-function setColor(assignedColor){
-  myColor = assignedColor;
-  fill(myColor)
-  textSize(30)
-  textFont('Impact')
-  textAlign(LEFT)
-  text('Welcome ' + nameP +", press 'A' to draw", 20,35)
-}
 
 
 function newConnection(){
@@ -47,6 +39,16 @@ function setup() {
   background(img)
 
 }
+
+function setColor(assignedColor){
+  myColor = assignedColor;
+  fill(myColor)
+  textSize(30)
+  textFont('Impact')
+  textAlign(LEFT)
+  text('Welcome ' + nameP +", press 'A' to draw", 20,35)
+}
+
 
 
 function draw() {
@@ -77,17 +79,15 @@ socket.emit("mouse", message)
 
 }
 
-function newPlayer(newPlayerColor){
+function newPlayer(data){
   console.log(newPlayerColor)
   y = height/2
   fill('120')
-  rectMode(CORNER);
-  noStroke()
-  rect(20,30,400,50)
+
   fill(newPlayerColor)
   textSize(30);
   textAlign(LEFT)
-  text('New player joined: '+ nameP, 20,50)
+  text('New player joined: '+ data.name, 20,55)
   pop()
 
 }
