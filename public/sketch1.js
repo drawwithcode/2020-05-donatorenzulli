@@ -12,7 +12,7 @@ let nameP = url.searchParams.get('nome');
 socket.on("connect", newConnection);
 socket.on("mouseBroadcast", drawOtherMouse)
 socket.on("color", setColor);
-socket.on("newPlayer", newPlayer)
+// socket.on("newPlayer", newPlayer)
 
 
 function setColor(assignedColor){
@@ -20,7 +20,7 @@ function setColor(assignedColor){
   fill(myColor)
   textSize(30)
   textAlign(CENTER)
-  text('Welcome ' + myColor, width/2,height/2)
+  text('Welcome ' + nameP, width/2,height/2)
 }
 
 
@@ -43,15 +43,16 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
+  background(img)
 
 }
 
 
 function draw() {
   // put drawing code here
-    background(img)
+
     fill(myColor)
-    text(nameP, mouseX,mouseY)
+
 }
 
 

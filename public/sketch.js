@@ -12,10 +12,10 @@ function setup(){
     input.position(width/2-100, height/2);
     input.style('font-family', 'Helvetica');
     input.style('font-size', '20px' )
-    input.style('color', 'blue')
-    input.style('border-color', 'blue');
+    input.style('color', 'black')
+
     input.style("border-radius", "15px");
-    input.style("border-style", "solid");
+
     input.style('margin-left', '10px')
     input.style("padding", "10px 20px 10px 20px")
 
@@ -24,9 +24,9 @@ function setup(){
      start.position(width/2-40, height/2+ 70)
      start.style('font-family', 'Helvetica');
 start.style('font-size', '20px');
-start.style('background-color', 'blue');
-start.style('color', 'white');
-start.style('border-color', 'blue');
+start.style('background-color', 'white');
+start.style('color', 'black');
+start.style('border-color', 'black');
 start.style('border-radius', '15px')
 start.style("border-style", "solid");
 start.style('border-style', 'none')

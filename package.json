@@ -1,25 +1,25 @@
+
 {
-  "name": "2020-05-donatorenzulli",
-  "version": "1.0.0",
-  "description": "A simple node project",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^3.0.3"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/drawwithcode/2020-05-donatorenzulli.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/drawwithcode/2020-05-donatorenzulli/issues"
-  },
-  "homepage": "https://github.com/drawwithcode/2020-05-donatorenzulli#readme"
+"name": "my-first-node-project",
+"version": "1.0.0",
+"description": "a simple node project",
+"main": "server.js",
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node server.js"
+},
+"repository": {
+  "type": "git",
+  "url": "git+https://github.com/silviacasavola/my-first-node-project.git"
+},
+"author": "donato",
+"license": "ISC",
+"bugs": {
+  "url": "https://github.com/silviacasavola/my-first-node-project/issues"
+},
+"homepage": "https://github.com/silviacasavola/my-first-node-project#readme",
+"dependencies": {
+  "express": "^4.17.1",
+  "socket.io": "^3.0.1"
+}
 }
