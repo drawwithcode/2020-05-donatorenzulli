@@ -12,7 +12,7 @@ let nameP = url.searchParams.get('nome');
 socket.on("connect", newConnection);
 socket.on("mouseBroadcast", drawOtherMouse)
 socket.on("color", setColor);
-// socket.on("newPlayer", newPlayer)
+socket.on("newPlayer", newPlayer)
 
 
 function setColor(assignedColor){
@@ -44,6 +44,8 @@ function preload(){
 function setup() {
   createCanvas(windowWidth,windowHeight)
   background(img)
+  textSize(20)
+  text("PRESS 'A' TO DRAW", 20,20)
 
 }
 
@@ -69,26 +71,27 @@ function mouseMoved(){
     x: mouseX,
     y: mouseY,
     color: myColor,
+    name:nameP,
 
   };
 
 //send the message to the server
-if(keyIsDown(65)){
+if(keyIsDown(65))
 socket.emit("mouse", message)
-}
+
 }
 
-// function newPlayer(newPlayerColor){
-//   console.log(newPlayerColor)
-//   y = height/2
-//   fill('120')
-//   rectMode(CENTER,CENTER);
-//   noStroke()
-//   rect(width/2,height/2,400,50)
-//   fill(newPlayerColor)
-//   textSize(30);
-//   textAlign(CENTER,CENTER)
-//   text('New player joined: '+ newPlayerColor, width/2,height/2)
-//   pop()
-//
-// }
+function newPlayer(newPlayerColor){
+  console.log(newPlayerColor)
+  y = height/2
+  fill('120')
+  rectMode(CORNER);
+  noStroke()
+  rect(20,30,400,50)
+  fill(newPlayerColor)
+  textSize(30);
+  textAlign(LEFT)
+  text('New player joined: '+ nameP, 20,50)
+  pop()
+
+}

@@ -34,9 +34,10 @@ start.style("padding", "8px 20px 8px 20px")
 start.style('margin-left', '20px')
 start.mousePressed(aprigioco)
 
-    textSize(100)
-    textAlign(CENTER)
-    text("TRIS.io", 200,150)
+    textSize(300)
+    textFont('Impact')
+    textAlign(LEFT)
+    text("TRISSS", 20,300)
 }
 
 function aprigioco(){
