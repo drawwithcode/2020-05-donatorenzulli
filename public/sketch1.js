@@ -19,8 +19,9 @@ function setColor(assignedColor){
   myColor = assignedColor;
   fill(myColor)
   textSize(30)
-  textAlign(CENTER)
-  text('Welcome ' + nameP, width/2,height/2)
+  textFont('Impact')
+  textAlign(LEFT)
+  text('Welcome ' + nameP +", press 'A' to draw", 20,35)
 }
 
 
@@ -44,17 +45,12 @@ function preload(){
 function setup() {
   createCanvas(windowWidth,windowHeight)
   background(img)
-  textSize(20)
-  text("PRESS 'A' TO DRAW", 20,20)
 
 }
 
 
 function draw() {
   // put drawing code here
-
-    fill(myColor)
-
 }
 
 
