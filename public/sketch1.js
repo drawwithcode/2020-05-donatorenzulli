@@ -1,93 +1,94 @@
-//DICHIARO IL PACKAGE SOCKET.IO
 let socket = io();
-let myColor = 'white';
+let myColor = "white"
+
+socket.on("connect", newConnection);
+socket.on("mouseBroadcast", drawOtherMouse);
+socket.on("color", setColor);
+socket.on("newPlayer", newPlayer)
+
+let yplay = 60
+
 const urlString = window.location.href;
 const url = new URL(urlString);
 let nameP = url.searchParams.get('nome');
 
-
-//AD OGNI CONNESSIONE DI UN CLIENT IL SERVER RICONOSCE
-//IL MESSAGGIO CONNECTION E NOI FACCIAMO PARTIRE LA FUNZIONE
-//newConnection
-socket.on("connect", newConnection);
-socket.on("mouseBroadcast", drawOtherMouse)
-socket.on("color", setColor);
-socket.on("newPlayer", newPlayer)
-
-
-
-
-function newConnection(){
-  console.log("your id: " + socket.id)
-}
-
-function drawOtherMouse(data){
+function newPlayer(newPlayerColor) {
+  console.log(newPlayerColor)
   push()
-  fill(data.color)
+  textSize(20)
+  textAlign(LEFT)
+  fill(newPlayerColor)
   noStroke()
-  ellipse(data.x,data.y, 10)
+  text("NEW PLAYER JOYNED:", 20,yplay)
+  yplay+=20
   pop()
 }
 
-function preload(){
-  // put preload code here
-    img = loadImage('tris.jpg');
+
+function newConnection() {
+  console.log("your id:" + socket.id)
 }
+
+function drawOtherMouse(data) {
+  noStroke()
+  stroke(data.color)
+  strokeWeight(10)
+  line(data.px, data.py, data.x, data.y)
+}
+
+function preload() {
+  // put preload code here
+  sfondotris = loadImage('assets/tris.jpg')
+}
+
+function setColor(assignedColor) {
+  myColor = assignedColor;
+  saluto()
+}
+
 
 function setup() {
-  createCanvas(windowWidth,windowHeight)
-  background(img)
-
+createCanvas(windowWidth, windowHeight)
+background(sfondotris)
+push()
+textAlign(LEFT);
+textSize(20)
+fill(myColor);
+text('Welcome ' + nameP + "! Invite your friends to play with you!" , 20,30);
+pop()
+// background(img)
 }
 
-function setColor(assignedColor){
-  myColor = assignedColor;
-  fill(myColor)
-  textSize(30)
-  textFont('Impact')
-  textAlign(LEFT)
-  text('Welcome ' + nameP +", press 'A' to draw", 20,35)
+function saluto(){
+
+
+
 }
-
-
 
 function draw() {
   // put drawing code here
+  console.log(myColor)
 }
 
+function mouseDragged() {
 
-function mouseMoved(){
+  push()
+  strokeWeight(10)
+  stroke(myColor)
 
-  fill(myColor)
-  noStroke()
-  if (keyIsDown(65)){
-  ellipse(mouseX,mouseY,10);}
-
+  line(pmouseX, pmouseY, mouseX, mouseY)
+pop()
 
   //create the message
   let message = {
     x: mouseX,
     y: mouseY,
+    px: pmouseX,
+    py: pmouseY,
     color: myColor,
-    name:nameP,
+    name: nameP,
+  }
 
-  };
-
-//send the message to the server
-if(keyIsDown(65))
-socket.emit("mouse", message)
-
-}
-
-function newPlayer(data){
-  console.log(newPlayerColor)
-  y = height/2
-  fill('120')
-
-  fill(newPlayerColor)
-  textSize(30);
-  textAlign(LEFT)
-  text('New player joined: '+ data.name, 20,55)
-  pop()
-
+  // send to the server
+  socket.emit("mouse", message); //"mouse" is title, message is the variable
 }
