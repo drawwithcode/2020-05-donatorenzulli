@@ -34,7 +34,7 @@ function drawOtherMouse(data) {
   noStroke()
   stroke(data.color)
   strokeWeight(10)
-  line(data.px, data.py, data.x, data.y)
+  line(data.px*width, data.py*height, data.x*width, data.y*height)
   fill(data.color)
   noStroke();
   textSize(20)
@@ -81,10 +81,10 @@ pop()
 
   //create the message
   let message = {
-    x: mouseX,
-    y: mouseY,
-    px: pmouseX,
-    py: pmouseY,
+    x: mouseX/width,
+    y: mouseY/height,
+    px: pmouseX/width,
+    py: pmouseY/height,
     color: myColor,
     name: nameP,
   }
