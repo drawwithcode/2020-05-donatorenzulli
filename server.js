@@ -18,7 +18,6 @@ function newConnection(socket) {
   console.log("new connection: " + socket.client.id)
 
   let clientColor = getRandomColor()
-
   socket.emit("color", clientColor)
 
   //send the color to all the other clients

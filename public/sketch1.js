@@ -47,7 +47,7 @@ function preload() {
 
 function setColor(assignedColor) {
   myColor = assignedColor;
-  saluto()
+
 }
 
 
@@ -63,11 +63,6 @@ pop()
 // background(img)
 }
 
-function saluto(){
-
-
-
-}
 
 function draw() {
   // put drawing code here
