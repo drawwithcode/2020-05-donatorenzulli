@@ -38,7 +38,7 @@ function drawOtherMouse(data) {
   fill(data.color)
   noStroke();
   textSize(20)
-  text(data.name, 150, yplay -20)
+  text(data.name, 250, yplay -20)
 }
 
 function preload() {
