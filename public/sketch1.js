@@ -35,7 +35,9 @@ function drawOtherMouse(data) {
   stroke(data.color)
   strokeWeight(10)
   line(data.px, data.py, data.x, data.y)
-  text(data.name, 50, yplay)
+  fill(data.color)
+  noStroke();
+  text(data.name, 80, yplay -20)
 }
 
 function preload() {
