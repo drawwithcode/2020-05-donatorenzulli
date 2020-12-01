@@ -27,6 +27,7 @@ function newPlayer(newPlayerColor) {
 
 function newConnection() {
   console.log("your id:" + socket.id)
+
 }
 
 function drawOtherMouse(data) {
@@ -34,6 +35,7 @@ function drawOtherMouse(data) {
   stroke(data.color)
   strokeWeight(10)
   line(data.px, data.py, data.x, data.y)
+  text(data.name, 50, yplay)
 }
 
 function preload() {
