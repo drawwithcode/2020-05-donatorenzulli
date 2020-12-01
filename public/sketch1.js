@@ -12,14 +12,14 @@ const urlString = window.location.href;
 const url = new URL(urlString);
 let nameP = url.searchParams.get('nome');
 
-function newPlayer(newPlayerColor) {
+function newPlayer(data) {
   console.log(newPlayerColor)
   push()
   textSize(20)
   textAlign(LEFT)
-  fill(newPlayerColor)
-  noStroke()
-  text("NEW PLAYER JOYNED:", 20,yplay)
+  fill(data.color)
+  noStroke();
+  text("NEW PLAYER JOYNED:" + data.name, 20,yplay)
   yplay+=20
   pop()
 }
@@ -35,10 +35,7 @@ function drawOtherMouse(data) {
   stroke(data.color)
   strokeWeight(10)
   line(data.px, data.py, data.x, data.y)
-  fill(data.color)
-  noStroke();
-  textSize(20)
-  text(data.name, 150, yplay -20)
+
 }
 
 function preload() {
